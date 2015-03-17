@@ -23,6 +23,8 @@ bodyAcc$y[(length(bodyAcc.y.test$V1)+1):length]<-bodyAcc.y.train$V1
 bodyAcc$z[1:length(bodyAcc.z.test$V1)]<-bodyAcc.z.test$V1
 bodyAcc$z[(length(bodyAcc.z.test$V1)+1):length]<-bodyAcc.z.train$V1
 
+write.table(bodyAcc,file="./bodyAcc.txt",row.name=FALSE)
+
 ##body gyro
 bodyGyro.x.test<-read.fwf(file=".//UCI HAR Dataset//test//Inertial Signals//body_gyro_x_test.txt",
                           sep="\t",header=FALSE,widths=16)
@@ -48,6 +50,8 @@ bodyGyro$y[(length(bodyGyro.y.test$V1)+1):length]<-bodyGyro.y.train$V1
 bodyGyro$z[1:length(bodyGyro.z.test$V1)]<-bodyGyro.z.test$V1
 bodyGyro$z[(length(bodyGyro.z.test$V1)+1):length]<-bodyGyro.z.train$V1
 
+write.table(bodyGyro,file="./bodyGyro.txt",row.name=FALSE)
+
 ##totol acc
 totalAcc.x.test<-read.fwf(file=".//UCI HAR Dataset//test//Inertial Signals//total_acc_x_test.txt",
                           sep="\t",header=FALSE,widths=16)
@@ -72,6 +76,8 @@ totalAcc$y[1:length(totalAcc.y.test$V1)]<-totalAcc.y.test$V1
 totalAcc$y[(length(totalAcc.y.test$V1)+1):length]<-totalAcc.y.train$V1
 totalAcc$z[1:length(totalAcc.z.test$V1)]<-totalAcc.z.test$V1
 totalAcc$z[(length(totalAcc.z.test$V1)+1):length]<-totalAcc.z.train$V1
+
+write.table(totalAcc,file="./totalAcc.txt",row.name=FALSE)
 
 ## the verage of data
 bodyAccMean<-sapply(bodyAcc,mean)
